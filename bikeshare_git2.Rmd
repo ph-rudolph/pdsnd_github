@@ -1,11 +1,12 @@
 ---
 title: "Bikeshare_git2"
 output: html_document
-editor_options: 
+editor_options:
   chunk_output_type: console
 ---
 
-### Which month has the highest share of customer users for each city?
+### Which month has the highest share of customer users for each city? Which
+### month has the lowest share of subscriber users for each city?
 
 library(dplyr)
 library(stringr)
@@ -38,7 +39,7 @@ ggplot(aes(x = User.Type, group = start.month), data = subset(chi, User.Type != 
   geom_text(aes(label = scales::percent(..prop..), y = ..prop..), stat = 'count', vjust = -.5) +
   facet_wrap(~start.month) +
   labs(x = 'User Type', y = 'User Share', title = 'Chicago Users by Month')
-  
+
 ggplot(aes(x = User.Type, group = start.month), data = subset(ny, User.Type == 'Subscriber' | User.Type == 'Customer')) +
   geom_bar(aes(y = ..prop..)) +
   geom_text(aes(label = scales::percent(..prop..), y = ..prop..), stat = 'count', vjust = -.5) +
@@ -52,7 +53,4 @@ ggplot(aes(x = User.Type, group = start.month), data = dc) +
   labs(x = 'User Type', y = 'User Share', title = 'Washington Users by Month')
 ```
 
-### By splitting the month from the 'Start.Time' field, we can look at user type usage on a proportional basis in each city. After facet wrapping, we see in Chicago that Customers had the greatest share of usage in June with 26.15% of ridership. In New York and Washington, however, Customers' top usages as a share of users both came in April, with 14.36% and 33.82% respectively.
-
-
-
+### By splitting the month from the 'Start.Time' field, we can look at user type usage on a proportional basis in each city. After facet wrapping, we see in Chicago that Customers had the greatest share of usage in June with 26.15% of ridership. In New York and Washington, however, Customers' top usages as a share of users both came in April, with 14.36% and 33.82% respectively. Conversely, the months containing the lowest share of 'subscriber' usage match the same ones as mentioned above.
