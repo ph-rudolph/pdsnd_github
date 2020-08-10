@@ -19,6 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 ### Call tables for each dataset's User.Type to view composition.
+
 table(chi$User.Type)
 table(ny$User.Type)
 table(dc$User.Type)
@@ -26,6 +27,7 @@ table(dc$User.Type)
 
 ```{r}
 ### Create new field for start month for each city.
+
 chi$start.month <- str_sub(chi$Start.Time,6,7)
 ny$start.month <- str_sub(ny$Start.Time,6,7)
 dc$start.month <- str_sub(dc$Start.Time,6,7)
@@ -37,20 +39,20 @@ dc$start.month <- str_sub(dc$Start.Time,6,7)
 ggplot(aes(x = User.Type, group = start.month), data = subset(chi, User.Type != 'Dependent')) +
   geom_bar(aes(y = ..prop..)) +
   geom_text(aes(label = scales::percent(..prop..), y = ..prop..), stat = 'count', vjust = -.5) +
-  facet_wrap(~start.month) +
-  labs(x = 'User Type', y = 'User Share', title = 'Chicago Users by Month')
+    facet_wrap(~start.month) +
+      labs(x = 'User Type', y = 'User Share', title = 'Chicago Users by Month')
 
 ggplot(aes(x = User.Type, group = start.month), data = subset(ny, User.Type == 'Subscriber' | User.Type == 'Customer')) +
   geom_bar(aes(y = ..prop..)) +
   geom_text(aes(label = scales::percent(..prop..), y = ..prop..), stat = 'count', vjust = -.5) +
-  facet_wrap(~start.month) +
-  labs(x = 'User Type', y = 'User Share', title = 'New York Users by Month')
+    facet_wrap(~start.month) +
+      labs(x = 'User Type', y = 'User Share', title = 'New York Users by Month')
 
 ggplot(aes(x = User.Type, group = start.month), data = dc) +
   geom_bar(aes(y = ..prop..)) +
   geom_text(aes(label = scales::percent(..prop..), y = ..prop..), stat = 'count', vjust = -.5) +
-  facet_wrap(~start.month) +
-  labs(x = 'User Type', y = 'User Share', title = 'Washington Users by Month')
+    facet_wrap(~start.month) +
+      labs(x = 'User Type', y = 'User Share', title = 'Washington Users by Month')
 ```
 
 ### By splitting the month from the 'Start.Time' field, we can look at user type usage on a proportional basis in each city. After facet wrapping, we see in Chicago that Customers had the greatest share of usage in June with 26.15% of ridership. In New York and Washington, however, Customers' top usages as a share of users both came in April, with 14.36% and 33.82% respectively. Conversely, the months containing the lowest share of 'subscriber' usage match the same ones as mentioned above.
