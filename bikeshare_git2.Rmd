@@ -18,6 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 ### Call tables for each dataset's User.Type to view composition.
+
 table(chi$User.Type)
 table(ny$User.Type)
 table(dc$User.Type)
@@ -25,6 +26,7 @@ table(dc$User.Type)
 
 ```{r}
 ### Create new field for start month for each city.
+
 chi$start.month <- str_sub(chi$Start.Time,6,7)
 ny$start.month <- str_sub(ny$Start.Time,6,7)
 dc$start.month <- str_sub(dc$Start.Time,6,7)

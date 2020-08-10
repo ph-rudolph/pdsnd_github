@@ -22,6 +22,7 @@ dc <- read.csv('washington.csv', sep = ',')
 
 ```{r}
 ### Check summary statistics for Trip.Duration to determine scope of the data.
+
 summary(chi$Trip.Duration)
 summary(ny$Trip.Duration)
 summary(dc$Trip.Duration)
@@ -29,6 +30,7 @@ summary(dc$Trip.Duration)
 
 ```{r}
 ### Calculate 99th percentile for each cities' Trip.Duration to identify outlier values.
+
 quantile(chi$Trip.Duration, probs = .99)
 quantile(ny$Trip.Duration, probs = .99)
 quantile(dc$Trip.Duration, probs = .99)
@@ -36,6 +38,7 @@ quantile(dc$Trip.Duration, probs = .99)
 
 ```{r}
 ### Create new subsets of the data with values for Trip.Duration approximately below the 99th percentile to remove outliers.
+
 chi2 <- chi[chi$Trip.Duration < 5100,]
 ny2 <- ny[ny$Trip.Duration < 3400,]
 dc2 <- dc[dc$Trip.Duration < 8600,]
@@ -68,6 +71,7 @@ ggplot(aes(y = Trip.Duration), data = dc2) +
 
 ```{r}
 ### Calculate standard deviations to determine base variability.
+
 sd(chi2$Trip.Duration)
 sd(ny2$Trip.Duration)
 sd(dc2$Trip.Duration)
@@ -75,6 +79,7 @@ sd(dc2$Trip.Duration)
 
 ```{r}
 ### Calculate coefficients of variation for subsets to obtain variability relative to mean values.
+
 sd(chi2$Trip.Duration)/mean(chi2$Trip.Duration)
 sd(ny2$Trip.Duration)/mean(ny2$Trip.Duration)
 sd(dc2$Trip.Duration)/mean(dc2$Trip.Duration)
