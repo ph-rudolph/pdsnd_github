@@ -1,10 +1,10 @@
 ---
 title: "Bikeshare_git1"
 output: html_document
-editor_options: 
+editor_options:
   chunk_output_type: console
 ---
-### Question 1: In descending order from greatest to smallest, what was the relative variability of the three cities trip durations
+### Question 1: In descending order from greatest to smallest, what was the relative variability of the three cities trip durations?
 
 library(ggplot2)
 library(ggthemes)
@@ -80,4 +80,4 @@ sd(ny2$Trip.Duration)/mean(ny2$Trip.Duration)
 sd(dc2$Trip.Duration)/mean(dc2$Trip.Duration)
 ```
 
-### It appears from the standard deviations calculated for each city's adjusted trip durations that Washington has the greatest variability, followed by Chicago, and New York. Calculating the coefficient of variation, the gap between variablity does seem to shrink somewhat, suggesting that the standard deviation is somewhat equalized when taking into account average trip durations by city. Boxplots for each city also reveal Washington with the greatest variability and New York with the least, taking the size of IQR as a proxy for variability.
+### It appears from the standard deviations calculated for each city's adjusted trip durations that Washington has the greatest variability, followed by Chicago, and New York. Calculating the coefficient of variation, the gap between variability does seem to shrink somewhat, suggesting that the standard deviation is somewhat equalized when taking into account average trip durations by city. Boxplots for each city also reveal Washington with the greatest variability and New York with the least, taking the size of IQR as a proxy for variability.
