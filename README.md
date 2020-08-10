@@ -1,15 +1,18 @@
 ### Date created
-Include the date you created this project and README file.
+10 August 2020
 
 ### Project Title
-Replace the Project Title
+Bikeshare Analysis in R
 
 ### Description
-Describe what your project is about and what it does
+The purpose of this project is to better understand the patterns of Bikeshare
+usage data in NYC, Chicago, and Washington D.C. using primarily the ggplot2
+library in R Studio.
 
 ### Files used
-Include the files used
+bikeshare_git1.Rmd
+bikeshare_git2.Rmd
+bikeshare_git3.Rmd
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Repository template cloned from https://github.com/udacity/pdsnd_github
