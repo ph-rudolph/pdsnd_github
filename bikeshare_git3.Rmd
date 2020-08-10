@@ -1,7 +1,7 @@
 ---
 title: "Bikeshare_git3"
 output: html_document
-editor_options: 
+editor_options:
   chunk_output_type: console
 ---
 
@@ -30,4 +30,4 @@ dc %>%
   arrange(desc(count))
 ```
 
-### As we see in the output for each city, the most common route combination is the one with the greatest number of occurrences. In Chicago, the most frequent route is from 'Lake Shore Dr & Monroe St' to 'Streeter Dr & Grand Ave'; this makes intuitive sense because of the stations proximity to two of Chicago's most popular tourist destinations, Grant Park and Navy Pier. For New York, it's 'E 7 St & Avenue A' to Cooper Square & E 7 St; perhaps because of tourists going from Tompkins Square Park to Cooper Square. And lastly, DC's most frequented route is a round trip from the 'Jefferson Dr & 14th St SW' Station; located in the heart of the National Mall, one of the most visited sites in the country.
+### In Chicago, the most frequent route is from 'Lake Shore Dr & Monroe St' to 'Streeter Dr & Grand Ave'; this makes intuitive sense because of the stations' proximity to Chicago's popular Grant Park and Navy Pier. In New York, it's 'E 7 St & Avenue A' to 'Cooper Square & E 7 St'; perhaps many tourists are traveling from Tompkins Square Park to Cooper Square. Lastly, DC's most frequented route is a round trip from the 'Jefferson Dr & 14th St SW' Station; it is located in the heart of the National Mall, one of the most visited sites in the country.
