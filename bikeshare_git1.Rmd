@@ -1,7 +1,7 @@
 ---
 title: "Bikeshare_git1"
 output: html_document
-editor_options: 
+editor_options:
   chunk_output_type: console
 ---
 ### Question 1: In descending order from greatest to smallest, what was the relative variability of the three cities trip durations
@@ -47,23 +47,23 @@ dc2 <- dc[dc$Trip.Duration < 8600,]
 ggplot(aes(y = Trip.Duration), data = chi2) +
   geom_boxplot() +
   geom_hline(yintercept = sd(chi2$Trip.Duration), color = 'blue') +
-  coord_cartesian(ylim = c(0,2000)) +
-  ggtitle('Chicago Trip Duration Boxplot') +
-  labs(x = 'Trip Duration', y = 'IQR + Median')
+    coord_cartesian(ylim = c(0,2000)) +
+      ggtitle('Chicago Trip Duration Boxplot') +
+      labs(x = 'Trip Duration', y = 'IQR + Median')
 
 ggplot(aes(y = Trip.Duration), data = ny2) +
   geom_boxplot() +
   geom_hline(yintercept = sd(ny2$Trip.Duration), color = 'blue') +
-  coord_cartesian(ylim = c(0,2000)) +
-  ggtitle('New York Trip Duration Boxplot') +
-  labs(x = 'Trip Duration', y = 'IQR + Median')
+    coord_cartesian(ylim = c(0,2000)) +
+      ggtitle('New York Trip Duration Boxplot') +
+      labs(x = 'Trip Duration', y = 'IQR + Median')
 
 ggplot(aes(y = Trip.Duration), data = dc2) +
   geom_boxplot() +
   geom_hline(yintercept = sd(dc2$Trip.Duration), color = 'blue') +
-  coord_cartesian(ylim = c(0,2000)) +
-  ggtitle('Washington Trip Duration Boxplot') +
-  labs(x = 'Trip Duration', y = 'IQR + Median')
+    coord_cartesian(ylim = c(0,2000)) +
+      ggtitle('Washington Trip Duration Boxplot') +
+      labs(x = 'Trip Duration', y = 'IQR + Median')
 ```
 
 ```{r}
